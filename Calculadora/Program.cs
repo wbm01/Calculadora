@@ -38,9 +38,20 @@ internal class Program
                     Console.ReadLine();
                     break;
 
-                    case 4: Console.WriteLine("A divisão dos números é: " + (n1/n2));
-                    Console.ReadLine();
-                    break;
+                    case 4:
+
+                    if (n2 == 0) {
+                        Console.WriteLine("Não é possível dividir por zero!");
+                        Console.ReadLine();
+                        break;
+                    }
+                    else
+                    {
+                        Console.WriteLine("A divisão dos números é: " + (n1 / n2));
+                        Console.ReadLine();
+                        break;
+                    }
+                    
 
                     case 5: Console.WriteLine("Fim do programa!");
                     Console.ReadLine();
