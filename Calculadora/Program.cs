@@ -1,7 +1,4 @@
-﻿using System.ComponentModel.Design;
-using System.Security.Cryptography.X509Certificates;
-
-internal class Program
+﻿internal class Program
 {
     private static void Main(string[] args)
     {
@@ -30,38 +27,50 @@ internal class Program
         }
 
         int Menu()
-            {
-                Console.Clear();
-                Console.WriteLine("1 - Somar");
-                Console.WriteLine("2 - Subtrair");
-                Console.WriteLine("3 - Multiplicar");
-                Console.WriteLine("4 - Dividir");
-                Console.WriteLine("5 - Sair");
-                Console.Write("Escolha uma opção: ");
-                opcao = int.Parse(Console.ReadLine());
-                
+        {
+            Console.Clear();
+            Console.WriteLine("1 - Somar");
+            Console.WriteLine("2 - Subtrair");
+            Console.WriteLine("3 - Multiplicar");
+            Console.WriteLine("4 - Dividir");
+            Console.WriteLine("5 - Sair");
+            Console.Write("Escolha uma opção: ");
+            return opcao = int.Parse(Console.ReadLine());
+        }
 
-                switch (opcao)
+        Console.WriteLine("Informe o primeiro número: ");
+        n1 = double.Parse(Console.ReadLine());
+
+        Console.WriteLine("Informe o segundo número: ");
+        n2 = double.Parse(Console.ReadLine());
+
+        
+
+        while (Menu() != 5)
+        {
+            
+
+                switch (Menu())
                 {
                     default:
                         Console.WriteLine("Opção inválida!");
                         Console.ReadLine();
-                    break;
+                        break;
 
                     case 1:
                         Console.WriteLine("A soma dos números é: {0}", Soma());
                         Console.ReadLine();
-                    break;
+                        break;
 
-                case 2:
+                    case 2:
                         Console.WriteLine("A subtração dos números é: {0}", Subtracao());
                         Console.ReadLine();
-                    break;
+                        break;
 
                     case 3:
                         Console.WriteLine("A multiplicação dos números é: {0}", Multiplicacao());
                         Console.ReadLine();
-                    break;
+                        break;
 
                     case 4:
 
@@ -82,20 +91,10 @@ internal class Program
                     case 5:
                         Console.WriteLine("Fim do programa!");
                         Console.ReadLine();
-                    break;  
+                        break;
                 }
-            return 0;
-            }
 
-            Console.WriteLine("Informe o primeiro número: ");
-            n1 = double.Parse(Console.ReadLine());
-
-            Console.WriteLine("Informe o segundo número: ");
-            n2 = double.Parse(Console.ReadLine());
-
-            while (opcao != 5)
-            {
-                Menu();
             }
         }
     }
+
